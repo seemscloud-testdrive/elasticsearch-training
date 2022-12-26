@@ -1,8 +1,6 @@
-### Data Types
+### Setup
 
 ```bash
-GET /twitter-000001
-
 POST /twitter-000001/_create/1
 {
   "date": {
@@ -39,6 +37,12 @@ POST /twitter-000001/_create/1
     "b"
   ]
 }
+```
+
+### Get
+
+```bash
+
 ```
 
 ### Cleanup
