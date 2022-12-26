@@ -1,8 +1,9 @@
 ```bash
-GET /_cat/aliases/twitter-*?pretty&v
 GET /_cat/indices/twitter-*?pretty&v
 GET /_cat/shards/twitter-*?pretty&v
 GET /_cat/segments/twitter-*?pretty&v
+
+GET /_cat/aliases/twitter-*?pretty&v
 ```
 
 ```
