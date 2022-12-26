@@ -17,5 +17,12 @@ GET /twitter-000001/_source/1?_source_includes=date
 ### Update Specified
 
 ```bash
-
+POST /twitter-000001/_update/1
+{
+  "doc": {
+    "number": {
+      "a": 11111
+    } 
+  }
+}
 ```
