@@ -1,3 +1,5 @@
+#### GET
+
 ```
 GET /twitter-000001/_mget
 {
@@ -12,6 +14,8 @@ GET /twitter-000001/_source/1?_source_excludes=date
 GET /twitter-000001/_source/1?_source_includes=date
 ```
 
+#### Update
+
 ```
 POST /twitter-000001/_update/1
 {
@@ -22,6 +26,8 @@ POST /twitter-000001/_update/1
   }
 }
 ```
+
+#### Delete
 
 ```
 DELETE /twitter-000001/_doc/1
