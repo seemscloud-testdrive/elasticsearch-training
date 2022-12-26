@@ -1,11 +1,14 @@
-### Index Status
+### General
 
 ```bash
 GET /_cat/aliases/twitter-*?pretty&v
 GET /_cat/indices/twitter-*?pretty&v
+
+GET /_index_template/twitter
+GET /_component_template/twitter
 ```
 
-### Index Details
+### Index Operations
 ```
 GET /twitter-000001/_count
 
@@ -40,4 +43,13 @@ GET /twitter-000001/_doc/1?_source=false
 GET /twitter-000001/_source/1
 GET /twitter-000001/_source/1?_source_excludes=date
 GET /twitter-000001/_source/1?_source_includes=date
+```
+
+### Cleanup
+
+```bash
+DELETE /twitter-000001
+
+DELETE /_index_template/twitter
+DELETE /_component_template/twitter
 ```
