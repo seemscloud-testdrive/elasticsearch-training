@@ -38,9 +38,3 @@ POST /twitter-000001/_create/1
   ]
 }
 ```
-
-### Cleanup
-
-```bash
-DELETE /twitter-000001
-```
