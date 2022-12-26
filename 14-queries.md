@@ -1,6 +1,6 @@
 #### Match All
 ```
-GET /twitter-000001/_search?explain
+GET /twitter-000001/_search
 {
   "size": 100,
   "query": {
@@ -8,7 +8,7 @@ GET /twitter-000001/_search?explain
   }
 }
 
-GET /twitter-000002/_search?explain
+GET /twitter-000002/_search
 {
   "size": 100,
   "query": {
