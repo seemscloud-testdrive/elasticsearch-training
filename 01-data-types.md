@@ -39,14 +39,17 @@ POST /twitter-000001/_create/1
 }
 ```
 
-### Query Data
+### GET
 
 ```bash
 GET /twitter-000001/_search
 { 
   "size": 1
 }
+```
 
+### Other Queries
+```bash
 GET /twitter-000001/_mget
 {
   "ids": ["1"]
