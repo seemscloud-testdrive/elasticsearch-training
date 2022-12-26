@@ -1,14 +1,14 @@
-### General
-
 ```bash
 GET /_cat/aliases/twitter-*?pretty&v
 GET /_cat/indices/twitter-*?pretty&v
+GET /_cat/shards/twitter-*?pretty&v
+GET /_cat/segments/twitter-*?pretty&v
 
+```
 GET /_index_template/twitter
 GET /_component_template/twitter
 ```
 
-### Index Operations
 ```
 GET /twitter-000001/_count
 
@@ -20,16 +20,12 @@ POST /twitter-000001/_refresh
 POST /twitter-000001/_flush
 ```
 
-### Search
-
 ```bash
 GET /twitter-000001/_search
 { 
   "size": 1
 }
 ```
-
-### Cleanup
 
 ```bash
 DELETE /twitter-000001
