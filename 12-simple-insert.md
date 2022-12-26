@@ -1,6 +1,3 @@
-### Setup
-
-```bash
 POST /twitter-000001/_doc
 {
   "message" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at congue est. Sed ac vehicula enim. Cras at nulla porttitor elit gravida consectetur in quis urna. Suspendisse tincidunt egestas neque sed accumsan. Donec tempus feugiat vestibulum. Nunc hendrerit malesuada ligula ac pellentesque. Sed ultrices congue nisl eget congue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
@@ -201,4 +198,3 @@ POST /twitter-000001/_doc
 {
   "message" : "Phasellus suscipit nulla id diam bibendum elementum. Suspendisse sed leo blandit, porta magna a, dapibus urna. In mollis sollicitudin sapien, eu iaculis diam accumsan sit amet. Nulla fringilla ac libero at faucibus. Mauris quis eros in dolor aliquam pellentesque. Nullam pellentesque condimentum massa nec gravida. Sed molestie leo eget diam sollicitudin ornare. Donec molestie cursus lectus, in malesuada massa consectetur ut. Ut posuere leo vitae odio tempor tristique. Cras vitae ex elit."
 }
-```
