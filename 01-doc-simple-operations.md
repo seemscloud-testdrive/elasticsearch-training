@@ -22,3 +22,7 @@ POST /twitter-000001/_update/1
   }
 }
 ```
+
+```
+DELETE /twitter-000001/_doc/1
+```
