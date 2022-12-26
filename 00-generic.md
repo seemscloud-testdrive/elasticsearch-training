@@ -23,7 +23,7 @@ POST /twitter-000001/_flush
 POST /twitter-000001/_forcemerge?max_num_segments=1
 ```
 
-```json
+```
 GET /twitter-000001/_search
 { 
   "size": 1
