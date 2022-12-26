@@ -48,7 +48,7 @@ GET /twitter-000001/_search
 }
 ```
 
-### Other Queries
+### Other
 ```bash
 GET /twitter-000001/_mget
 {
