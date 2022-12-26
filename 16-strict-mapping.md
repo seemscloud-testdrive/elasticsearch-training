@@ -19,9 +19,6 @@ PUT /_component_template/twitter
     "mappings": {
       "numeric_detection": true,
       "date_detection": true
-    },
-    "aliases": {
-      "twitter": { }
     }
   }
 }
