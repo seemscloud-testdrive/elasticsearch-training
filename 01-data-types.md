@@ -63,5 +63,5 @@ GET /twitter-000001/_source/1?_source_includes=date
 ### Cleanup
 
 ```bash
-DELETE /twitter-000005
+DELETE /twitter-000001
 ```
