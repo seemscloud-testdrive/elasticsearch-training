@@ -20,6 +20,8 @@ GET /twitter-000001/_settings
 
 POST /twitter-000001/_refresh
 POST /twitter-000001/_flush
+
+POST /twitter-000001/_forcemerge?max_num_segments=1
 ```
 
 ```bash
