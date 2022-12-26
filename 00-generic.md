@@ -30,7 +30,8 @@ POST /twitter-*/_forcemerge?max_num_segments=1
 ```
 
 ```
-DELETE /twitter-*
+DELETE /twitter-000001
+DELETE /twitter-000002
 ```
 
 ```
