@@ -16,6 +16,10 @@ GET /_component_template/twitter
 ```
 GET /twitter-000001/_count
 
+GET /twitter-000001/_stats
+GET /twitter-000001/_search_shards
+GET /twitter-000001/_segments
+
 GET /twitter-000001/_alias
 GET /twitter-000001/_mapping
 GET /twitter-000001/_settings
