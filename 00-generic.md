@@ -29,6 +29,9 @@ POST /twitter-000001/_forcemerge?max_num_segments=1
 
 ```
 DELETE /twitter-000001
+DELETE /twitter-000002
+
 DELETE /_index_template/twitter
 DELETE /_component_template/twitter
+DELETE /_ingest/pipeline/twitter
 ```
