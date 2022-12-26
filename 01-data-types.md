@@ -1,7 +1,4 @@
 ```bash
-############################################
-##  Create Document
-
 GET /twitter-000001
 
 POST /twitter-000001/_create/1
