@@ -1,3 +1,5 @@
+#### Data Details
+
 ```
 GET /_cat/indices/twitter-*?pretty&v
 GET /_cat/shards/twitter-*?pretty&v
@@ -10,6 +12,8 @@ GET /_ingest/pipeline/twitter
 GET /_index_template/twitter
 GET /_component_template/twitter
 ```
+
+#### Index Details
 
 ```
 GET /twitter-*/_count
@@ -27,12 +31,12 @@ POST /twitter-*/_flush
 POST /twitter-*/_forcemerge?max_num_segments=1
 ```
 
+#### Cleanup
+
 ```
 DELETE /twitter-000001
 DELETE /twitter-000002
-```
 
-```
 DELETE /_index_template/twitter
 DELETE /_component_template/twitter
 DELETE /_ingest/pipeline/twitter
