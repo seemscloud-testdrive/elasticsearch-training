@@ -1,7 +1,7 @@
 ### Setup
 
 ```bash
-PUT _index_template/twitter
+PUT /_index_template/twitter
 {
   "index_patterns": ["twitter-*"],
   "template": {
@@ -20,7 +20,7 @@ PUT _index_template/twitter
   "composed_of": ["twitter"]
 }
 
-PUT _component_template/twitter
+PUT /_component_template/twitter
 {
   "template": {
     "settings": {
@@ -39,13 +39,13 @@ PUT _component_template/twitter
 ```
 
 ```bash
-GET _index_template/twitter
-GET _component_template/twitter
+GET /_index_template/twitter
+GET /_component_template/twitter
 ```
 
 ### Cleanup
 
 ```bash
-DELETE _index_template/twitter
-DELETE _component_template/twitter
+DELETE /_index_template/twitter
+DELETE /_component_template/twitter
 ```
