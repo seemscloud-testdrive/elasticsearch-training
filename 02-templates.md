@@ -1,5 +1,3 @@
-### Setup
-
 ```bash
 PUT /_index_template/twitter
 {
@@ -36,16 +34,4 @@ PUT /_component_template/twitter
     }
   }
 }
-```
-
-```bash
-GET /_index_template/twitter
-GET /_component_template/twitter
-```
-
-### Cleanup
-
-```bash
-DELETE /_index_template/twitter
-DELETE /_component_template/twitter
 ```
