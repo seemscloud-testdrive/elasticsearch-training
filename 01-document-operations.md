@@ -1,7 +1,7 @@
 ```
 GET /twitter-000001/_mget
 {
-  "ids": ["1"]
+  "ids": ["1", "2"]
 }
 
 GET /twitter-000001/_doc/1
