@@ -9,7 +9,9 @@ PUT /_index_template/twitter
   },
   "composed_of": ["twitter"]
 }
+```
 
+```
 PUT /_component_template/twitter
 {
   "template": {
