@@ -1,5 +1,3 @@
-### Setup
-
 ```bash
 POST /twitter-000001/_create/1
 {
