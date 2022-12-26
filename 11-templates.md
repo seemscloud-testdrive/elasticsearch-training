@@ -1,4 +1,4 @@
-```bash
+```
 PUT /_index_template/twitter
 {
   "index_patterns": ["twitter-*"],
