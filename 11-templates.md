@@ -1,17 +1,4 @@
 ```
-PUT /_index_template/twitter
-{
-  "index_patterns": ["twitter-*"],
-  "template": {
-    "aliases": {
-      "twitter": { }
-    }
-  },
-  "composed_of": ["twitter"]
-}
-```
-
-```
 PUT /_component_template/twitter
 {
   "template": {
@@ -24,5 +11,18 @@ PUT /_component_template/twitter
       "date_detection": true
     },
   }
+}
+```
+
+```
+PUT /_index_template/twitter
+{
+  "index_patterns": ["twitter-*"],
+  "template": {
+    "aliases": {
+      "twitter": { }
+    }
+  },
+  "composed_of": ["twitter"]
 }
 ```
