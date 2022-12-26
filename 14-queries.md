@@ -1,3 +1,4 @@
+#### Match All
 ```
 GET /twitter-000001/_search?explain
 {
@@ -14,7 +15,11 @@ GET /twitter-000002/_search?explain
     "match_all": {}
   }
 }
+```
 
+#### Match At Least Of
+
+```
 GET /twitter-000001/_search
 {
   "sort": [
@@ -59,7 +64,11 @@ GET /twitter-000001/_search
     }
   }
 }
+```
 
+#### Match Sentence
+
+```
 GET /twitter-000001/_search
 {
   "sort": [
@@ -94,7 +103,11 @@ GET /twitter-000001/_search
     }
   }
 }
+```
 
+#### Match Existing Field
+
+```
 GET /twitter-000001/_search
 {
   "sort": [
@@ -130,4 +143,3 @@ GET /twitter-000001/_search
   }
 }
 ```
-
