@@ -1,12 +1,6 @@
 ```bash
-############################################
-##  General
-
-GET /_cat/aliases?pretty&v
-GET /_cat/indices?pretty&v
-
-############################################
-##  Index Details
+GET /_cat/aliases/twitter-*?pretty&v
+GET /_cat/indices/twitter-*?pretty&v
 
 GET /twitter-000001/_count
 
