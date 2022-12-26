@@ -1,4 +1,4 @@
-# Data Types
+### Data Types
 
 ```bash
 GET /twitter-000001
@@ -41,7 +41,7 @@ POST /twitter-000001/_create/1
 }
 ```
 
-## Cleanup
+### Cleanup
 
 ```bash
 DELETE /twitter-000005
