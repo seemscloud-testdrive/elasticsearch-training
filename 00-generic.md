@@ -12,24 +12,23 @@ GET /_component_template/twitter
 ```
 
 ```
-GET /twitter-000001/_count
+GET /twitter-*/_count
 
-GET /twitter-000001/_stats
-GET /twitter-000001/_search_shards
-GET /twitter-000001/_segments
+GET /twitter-*/_stats
+GET /twitter-*/_search_shards
+GET /twitter-*/_segments
 
-GET /twitter-000001/_alias
-GET /twitter-000001/_mapping
-GET /twitter-000001/_settings
+GET /twitter-*/_alias
+GET /twitter-*/_mapping
+GET /twitter-*/_settings
 
-POST /twitter-000001/_refresh
-POST /twitter-000001/_flush
-POST /twitter-000001/_forcemerge?max_num_segments=1
+POST /twitter-*/_refresh
+POST /twitter-*/_flush
+POST /twitter-*/_forcemerge?max_num_segments=1
 ```
 
 ```
-DELETE /twitter-000001
-DELETE /twitter-000002
+DELETE /twitter-*
 ```
 
 ```
