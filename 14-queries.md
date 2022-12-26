@@ -1,7 +1,15 @@
 ```
 GET /twitter-000001/_search?explain
 {
-  "size": 50,
+  "size": 100,
+  "query": {
+    "match_all": {}
+  }
+}
+
+GET /twitter-000002/_search?explain
+{
+  "size": 100,
   "query": {
     "match_all": {}
   }
@@ -16,7 +24,7 @@ GET /twitter-000001/_search
       }
     }
   ],
-  "size": 1000,
+  "size": 10000,
   "query": {
     "bool": {
       "must": [],
@@ -62,7 +70,7 @@ GET /twitter-000001/_search
       }
     }
   ],
-  "size": 500,
+  "size": 10000,
   "query": {
     "bool": {
       "must": [],
@@ -97,7 +105,7 @@ GET /twitter-000001/_search
       }
     }
   ],
-  "size": 500,
+  "size": 10000,
   "query": {
     "bool": {
       "must": [],
