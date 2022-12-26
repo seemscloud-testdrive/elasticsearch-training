@@ -1,5 +1,3 @@
-### GET Specified
-
 ```bash
 GET /twitter-000001/_mget
 {
@@ -13,8 +11,6 @@ GET /twitter-000001/_source/1
 GET /twitter-000001/_source/1?_source_excludes=date
 GET /twitter-000001/_source/1?_source_includes=date
 ```
-
-### Update Specified
 
 ```bash
 POST /twitter-000001/_update/1
