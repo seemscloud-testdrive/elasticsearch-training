@@ -1,7 +1,12 @@
+#### Index Status
+
 ```bash
 GET /_cat/aliases/twitter-*?pretty&v
 GET /_cat/indices/twitter-*?pretty&v
+```
 
+# Index Details
+```
 GET /twitter-000001/_count
 
 GET /twitter-000001/_alias
