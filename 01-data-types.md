@@ -39,15 +39,6 @@ POST /twitter-000001/_create/1
 }
 ```
 
-### GET
-
-```bash
-GET /twitter-000001/_search
-{ 
-  "size": 1
-}
-```
-
 ### Cleanup
 
 ```bash
