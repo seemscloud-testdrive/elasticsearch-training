@@ -39,6 +39,8 @@ POST /twitter-000001/_create/1
 }
 ```
 
+### Query Data
+
 ```bash
 GET /twitter-000001/_search
 { 
