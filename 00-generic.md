@@ -32,7 +32,6 @@ GET /twitter-000001/_search
 
 ```bash
 DELETE /twitter-000001
-
 DELETE /_index_template/twitter
 DELETE /_component_template/twitter
 ```
