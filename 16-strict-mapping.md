@@ -17,7 +17,9 @@ PUT /_component_template/twitter
     }
   }
 }
+```
 
+```
 PUT /_index_template/twitter
 {
   "index_patterns": ["twitter-*"],
