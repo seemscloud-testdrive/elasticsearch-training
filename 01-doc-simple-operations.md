@@ -1,4 +1,4 @@
-```json
+```
 GET /twitter-000001/_mget
 {
   "ids": ["1", "2"]
