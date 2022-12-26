@@ -9,6 +9,8 @@ GET /_cat/aliases/twitter-*?pretty&v
 ```
 GET /_index_template/twitter
 GET /_component_template/twitter
+
+GET /_ingest/pipeline/twitter
 ```
 
 ```
