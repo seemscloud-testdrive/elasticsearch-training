@@ -13,7 +13,7 @@ GET /twitter-000001/_source/1?_source_includes=date
 ```
 
 ```json
-POST /twitter-000001/_update/1
+#POST /twitter-000001/_update/1
 {
   "doc": {
     "number": {
