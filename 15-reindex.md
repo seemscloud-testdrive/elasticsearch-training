@@ -27,7 +27,7 @@ GET /_cat/tasks?pretty&hv&actions=*reindex
 POST /_reindex?slices=10&wait_for_completion=false&refresh
 {
   "source": {
-    "index": "twitter-*",
+    "index": "twitter-000001",
     "query": {
       "match_all": {}
     }
