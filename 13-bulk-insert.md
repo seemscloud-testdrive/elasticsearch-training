@@ -1,3 +1,4 @@
+#### Index / Create / Update
 ```
 POST _bulk
 {"index":{"_index":"twitter-000001","_id":"1"}}
@@ -9,6 +10,8 @@ POST _bulk
 {"update":{"_index":"twitter-000001","_id":"3"}}
 { "doc":{"message":"Ipsum"}}
 ```
+
+#### Delete
 
 ```
 POST _bulk
