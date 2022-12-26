@@ -1,4 +1,4 @@
-```bash
+```
 POST _bulk
 {"index":{"_index":"twitter-000001","_id":"1"}}
 {"message":"Lorem"}
@@ -8,7 +8,9 @@ POST _bulk
 {"message":"Lorem"}
 {"update":{"_index":"twitter-000001","_id":"3"}}
 { "doc":{"message":"Ipsum"}}
+```
 
+```
 POST _bulk
 {"delete":{"_index":"twitter-000001","_id":"1"}}
 {"delete":{"_index":"twitter-000001","_id":"2"}}
