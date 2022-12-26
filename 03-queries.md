@@ -202,15 +202,3 @@ POST /twitter-000001/_doc
   "message" : "Phasellus suscipit nulla id diam bibendum elementum. Suspendisse sed leo blandit, porta magna a, dapibus urna. In mollis sollicitudin sapien, eu iaculis diam accumsan sit amet. Nulla fringilla ac libero at faucibus. Mauris quis eros in dolor aliquam pellentesque. Nullam pellentesque condimentum massa nec gravida. Sed molestie leo eget diam sollicitudin ornare. Donec molestie cursus lectus, in malesuada massa consectetur ut. Ut posuere leo vitae odio tempor tristique. Cras vitae ex elit."
 }
 ```
-
-### Fetch
-
-```bash
-
-```
-
-### Cleanup
-
-```bash
-DELETE /twitter-000001
-```
