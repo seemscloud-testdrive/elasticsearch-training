@@ -105,9 +105,8 @@ GET /twitter-000001/_search
         {
           "range": {
             "@timestamp": {
-              "format": "strict_date_optional_time",
-              "gte": "2022-12-26T22:03:49.705Z",
-              "lte": "2022-12-26T22:18:49.705Z"
+              "gte": "now-1h/h",
+              "lte": "now"
             }
           }
         },
