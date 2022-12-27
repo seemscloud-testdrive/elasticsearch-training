@@ -26,6 +26,6 @@ POST /_snapshot/twitter/backup/_restore
   "ignore_unavailable": true,
   "include_global_state": false,
   "rename_pattern": "(.+)",
-  "rename_replacement": "restored_index_$1"
+  "rename_replacement": "$1_restored"
 }
 ```
