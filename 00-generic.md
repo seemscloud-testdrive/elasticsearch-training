@@ -11,6 +11,8 @@ GET /_ingest/pipeline/twitter
 
 GET /_index_template/twitter
 GET /_component_template/twitter
+
+GET /_snapshot
 ```
 
 #### Index Details
@@ -40,4 +42,6 @@ DELETE /twitter-000002
 DELETE /_index_template/twitter
 DELETE /_component_template/twitter
 DELETE /_ingest/pipeline/twitter
+
+DELETE /_snapshot/twitter
 ```
