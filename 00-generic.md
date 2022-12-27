@@ -13,6 +13,8 @@ GET /_index_template/twitter
 GET /_component_template/twitter
 
 GET /_snapshot
+GET /_snapshot/_status
+GET /_snapshot/twitter/backup
 ```
 
 #### Index Details
@@ -44,4 +46,5 @@ DELETE /_component_template/twitter
 DELETE /_ingest/pipeline/twitter
 
 DELETE /_snapshot/twitter
+DELETE /_snapshot/twitter/backup
 ```
