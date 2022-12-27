@@ -12,7 +12,7 @@ PUT _snapshot/twitter
   }
 }
 
-PUT _snapshot/twitter/backup?wait_for_completion=false
+PUT _snapshot/twitter/snapshot?wait_for_completion=false
 {
   "indices": "logs",
   "include_global_state": false,
@@ -20,9 +20,16 @@ PUT _snapshot/twitter/backup?wait_for_completion=false
 }
 
 
-POST /_snapshot/twitter/backup/_restore
+PUT _snapshot/twitter/snapshot?wait_for_completion=false
 {
-  "indices": "logs",
+  "indices": ".*",
+  "include_global_state": true,
+  "ignore_unavailable": true
+}
+
+POST /_snapshot/twitter/snapshot/_restore
+{
+  "indices": "twitter",
   "ignore_unavailable": true,
   "include_global_state": false,
   "rename_pattern": "(.+)",
