@@ -23,11 +23,6 @@ helm upgrade --install elasticsearch elastic/elasticsearch \
 ```
 
 ```bash
-kubectl -n logging-system get secrets  elasticsearch-aio-credentials -o jsonpath="{.data.username}" | base64 -d ; echo
-kubectl -n logging-system get secrets  elasticsearch-aio-credentials -o jsonpath="{.data.passwords}" | base64 -d ; echo
-```
-
-```bash
 helm upgrade --install kibana elastic/kibana \
   --version 8.5.1 \
   --namespace logging-system \
