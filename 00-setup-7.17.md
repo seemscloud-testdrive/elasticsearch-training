@@ -58,7 +58,9 @@ spec:
     name: elasticsearch-ca
     kind: Issuer
     group: cert-manager.io
----
+```
+
+```bash
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
