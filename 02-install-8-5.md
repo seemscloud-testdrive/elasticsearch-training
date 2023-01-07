@@ -23,6 +23,10 @@ helm upgrade --install elasticsearch elastic/elasticsearch \
 ```
 
 ```bash
+kubectl  exec -it -n logging-system elasticsearch-aio-0 -- openssl x509 -noout -text -in config/certs/tls.crt
+```
+
+```bash
 helm upgrade --install kibana elastic/kibana \
   --version 8.5.1 \
   --namespace logging-system \
@@ -32,4 +36,9 @@ helm upgrade --install kibana elastic/kibana \
   --set elasticsearchCredentialSecret=elasticsearch-aio-credentials \
   --set replicas=1 \
   --set service.type=LoadBalancer
+```
+
+```bash
+kubectl -n logging-system get secrets  elasticsearch-aio-credentials -o jsonpath="{.data.username}" | base64 -d ; echo
+kubectl -n logging-system get secrets  elasticsearch-aio-credentials -o jsonpath="{.data.passwords}" | base64 -d ; echo
 ```
