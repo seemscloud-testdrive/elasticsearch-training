@@ -17,6 +17,12 @@ kubectl -n logging-system delete job pre-install-kibana
 kubectl -n logging-system delete job post-delete-kibana
 ```
 
+### Verification
+
+```bash
+kubectl logs -n logging-system -l app=elasticsearch-aio
+```
+
 ## Setup
 
 ### Elasticsearch
