@@ -8,8 +8,6 @@ helm uninstall -n logging-system elasticsearch
 ```
 
 ```bash
-helm uninstall -n logging-system kibana
-
 kubectl -n logging-system delete cm kibana-helm-scripts
 kubectl -n logging-system delete secrets kibana-es-token
 kubectl -n logging-system delete serviceaccounts pre-install-kibana
