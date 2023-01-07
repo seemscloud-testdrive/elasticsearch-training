@@ -17,12 +17,14 @@ helm upgrade --install elasticsearch elastic/elasticsearch \
   --set extraVolumeMounts[0].name=tls \
   --set extraVolumeMounts[0].mountPath=/usr/share/elasticsearch/config/certs \
   --set extraVolumeMounts[0].readOnly=true \
-  -f values.yaml
+  -f values.yaml \
+  --set extraEnvs[0].name=ELASTIC_PASSWORD \
+  --set extraEnvs[0].value=XXXXXXXXXXXXXXXXXXXX
 ```
 
 ```bash
 kubectl  exec -it elasticsearch-aio-0 -n logging-system -- ./bin/elasticsearch-setup-passwords auto
 
-kubectl  exec -it elasticsearch-aio-0 -n logging-system -- curl https://0:9200/_cat/health -u elastic:XXXXX
-kubectl  exec -it elasticsearch-aio-0 -n logging-system -- curl https://0:9200/_cat/nodes -u elastic:XXXXX
+kubectl  exec -it elasticsearch-aio-0 -n logging-system -- curl https://0:9200/_cat/health -u -k -vvv elastic:XXXXXXXXXXXXXXXXXXXX
+kubectl  exec -it elasticsearch-aio-0 -n logging-system -- curl https://0:9200/_cat/nodes -u -k -vvv elastic:XXXXXXXXXXXXXXXXXXXX
 ```
