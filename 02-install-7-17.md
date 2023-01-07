@@ -43,9 +43,9 @@ helm upgrade --install kibana elastic/kibana \
   --set extraVolumeMounts[0].readOnly=true \
   --set extraEnvs[0].name=ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES \
   --set extraEnvs[0].name=/usr/share/kibana/config/certs/ca.crt \
-  --set extraEnvs[0].name=ELASTICSEARCH_USERNAME \
-  --set extraEnvs[0].value=elastic \
-  --set extraEnvs[1].name=ELASTICSEARCH_PASSWORD \
-  --set extraEnvs[1].value=nmHC8eIAZSoS2vn1UxV3
+  --set extraEnvs[1].name=ELASTICSEARCH_USERNAME \
+  --set extraEnvs[1].value=elastic \
+  --set extraEnvs[2].name=ELASTICSEARCH_PASSWORD \
+  --set extraEnvs[2].value=nmHC8eIAZSoS2vn1UxV3
 
 ```
