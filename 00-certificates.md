@@ -27,9 +27,7 @@ spec:
     name: elasticsearch-ca
     kind: Issuer
     group: cert-manager.io
-EndOfMessage
 ---
-kubectl apply -f - << "EndOfMessage"
 apiVersion: cert-manager.io/v1
 kind: Issuer
 metadata:
