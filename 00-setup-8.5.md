@@ -8,13 +8,13 @@ helm uninstall -n logging-system elasticsearch
 ```
 
 ```bash
-kubectl -n logging-system delete cm kibana-helm-scripts
-kubectl -n logging-system delete secrets kibana-es-token
-kubectl -n logging-system delete serviceaccounts pre-install-kibana
-kubectl -n logging-system delete roles  pre-install-kibana
-kubectl -n logging-system delete rolebindings pre-install-kibana
-kubectl -n logging-system delete job pre-install-kibana
-kubectl -n logging-system delete job post-delete-kibana
+kubectl delete -n logging-system cm kibana-helm-scripts
+kubectl delete -n logging-system secrets kibana-es-token
+kubectl delete -n logging-system serviceaccounts pre-install-kibana
+kubectl delete -n logging-system roles  pre-install-kibana
+kubectl delete -n logging-system rolebindings pre-install-kibana
+kubectl delete -n logging-system job pre-install-kibana
+kubectl delete -n logging-system job post-delete-kibana
 ```
 
 ### Verification
