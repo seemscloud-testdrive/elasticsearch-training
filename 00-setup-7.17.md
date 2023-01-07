@@ -15,6 +15,10 @@ helm uninstall -n logging-system elasticsearch
 ### Verify
 
 ```bash
+kubectl logs -n logging-system -l app=elasticsearch-aio
+```
+
+```bash
 kubectl get -n logging-system certificates
 kubectl get -n logging-system secrets
 kubectl get -n logging-system issuers
