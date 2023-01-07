@@ -28,9 +28,7 @@ spec:
     kind: Issuer
     group: cert-manager.io
 EndOfMessage
-```
-
-```bash
+---
 kubectl apply -f - << "EndOfMessage"
 apiVersion: cert-manager.io/v1
 kind: Issuer
