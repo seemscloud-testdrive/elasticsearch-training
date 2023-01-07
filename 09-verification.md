@@ -3,6 +3,11 @@ kubectl -n logging-system logs -l app=elasticsearch-aio
 ```
 
 ```bash
+kubectl -n logging-system get pods
+kubectl -n logging-system get svc
+```
+
+```bash
 kubectl -n logging-system get certificates
 kubectl -n logging-system get issuers
 kubectl -n logging-system get secrets
