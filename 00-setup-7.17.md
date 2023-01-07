@@ -3,26 +3,26 @@
 ### Cleanup
 
 ```bash
-helm uninstall -n logging-system kibana
-helm uninstall -n logging-system elasticsearch
+helm -n logging-system uninstall kibana
+helm -n logging-system uninstall elasticsearch
 ```
 
 ```bash
-kubectl delete -n logging-system certificates elasticsearch-ca elasticsearch-ca-ends
-kubectl delete -n logging-system issuers elasticsearch-ca elasticsearch-ca-ends
-kubectl delete -n logging-system secrets elasticsearch-ca-tls elasticsearch-ca-ends-tls
+kubectl -n logging-system delete certificates elasticsearch-ca elasticsearch-ca-ends
+kubectl -n logging-system delete issuers elasticsearch-ca elasticsearch-ca-ends
+kubectl -n logging-system delete secrets elasticsearch-ca-tls elasticsearch-ca-ends-tls
 ```
 
 ### Verification
 
 ```bash
-kubectl logs -n logging-system -l app=elasticsearch-aio
+kubectl -n logging-system logs -l app=elasticsearch-aio
 ```
 
 ```bash
-kubectl get -n logging-system certificates
-kubectl get -n logging-system secrets
-kubectl get -n logging-system issuers
+kubectl -n logging-system get certificates
+kubectl -n logging-system get secrets
+kubectl -n logging-system get issuers
 ```
 
 ## Setup
