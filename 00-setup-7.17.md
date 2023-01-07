@@ -1,4 +1,4 @@
-## Cleanup / Verification
+## Cleanup and Verification
 
 ### Cleanup
 
@@ -12,7 +12,7 @@ kubectl delete -n logging-system secrets elasticsearch-ca-tls elasticsearch-ca-e
 helm uninstall -n logging-system elasticsearch
 ```
 
-### Verify
+### Verification
 
 ```bash
 kubectl logs -n logging-system -l app=elasticsearch-aio
@@ -24,7 +24,9 @@ kubectl get -n logging-system secrets
 kubectl get -n logging-system issuers
 ```
 
-## Setup Certificates
+## Setup
+
+### Certificates
 
 ```bash
 kubectl apply -f - << "EndOfMessage"
@@ -89,7 +91,7 @@ spec:
 EndOfMessage
 ```
 
-## Setup Elasticsearch
+### Elasticsearch
 
 ```bash
 cat > values.yaml << "EndOfMessage"
