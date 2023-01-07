@@ -51,8 +51,8 @@ helm upgrade --install kibana elastic/kibana \
   -f values.yaml \
   --set extraEnvs[0].name=ELASTICSEARCH_USERNAME \
   --set extraEnvs[0].value=elastic \
-  --set extraEnvs[0].name=ELASTICSEARCH_PASSWORD \
-  --set extraEnvs[0].value=nmHC8eIAZSoS2vn1UxV3 \
+  --set extraEnvs[1].name=ELASTICSEARCH_PASSWORD \
+  --set extraEnvs[1].value=nmHC8eIAZSoS2vn1UxV3 \
   --set extraVolumes[0].name=tls \
   --set extraVolumes[0].secret.secretName=elasticsearch-ca-ends-tls \
   --set extraVolumeMounts[0].name=tls \
