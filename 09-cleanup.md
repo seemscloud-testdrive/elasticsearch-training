@@ -1,18 +1,12 @@
-### Global
-
 ```bash
 kubectl -n logging-system delete certificates elasticsearch-ca elasticsearch-ca-ends
 kubectl -n logging-system delete issuers elasticsearch-ca elasticsearch-ca-ends
 kubectl -n logging-system delete secrets elasticsearch-ca-tls elasticsearch-ca-ends-tls
 ```
 
-### Elasticsearch
-
 ```bash
 helm -n logging-system uninstall elasticsearch
 ```
-
-### Kibana
 
 ```bash
 helm -n logging-system uninstall kibana
