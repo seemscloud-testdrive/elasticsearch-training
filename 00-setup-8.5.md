@@ -1,6 +1,6 @@
 ## Cleanup and Verification
 
-### Cleanup 
+### Cleanup
 
 ```bash
 helm -n logging-system uninstall kibana
@@ -135,15 +135,18 @@ helm upgrade --install elasticsearch elastic/elasticsearch \
   --set minimumMasterNodes=3 \
   --set maxUnavailable=3 \
   --set persistence.enabled=false \
-  --set createCert=false \
   --set terminationGracePeriod=0 \
-  --set secret.password=elastic \
+  --set service.type=LoadBalancer \
+  --set service.transportPortName=https \
+  --set protocol=https \
   --set extraVolumes[0].name=tls \
   --set extraVolumes[0].secret.secretName=elasticsearch-ca-ends-tls \
   --set extraVolumeMounts[0].name=tls \
   --set extraVolumeMounts[0].mountPath=/usr/share/elasticsearch/config/certs \
   --set extraVolumeMounts[0].readOnly=true \
-  -f values.yaml
+  -f values.yaml \
+  --set createCert=false \
+  --set secret.password=elastic
 ```
 
 ### Kibana
