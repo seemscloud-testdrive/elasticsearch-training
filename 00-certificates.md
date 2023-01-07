@@ -59,7 +59,7 @@ spec:
     encoding: PKCS8
     size: 2048
   issuerRef:
-    name: elasticsearch-ca
+    name: elasticsearch-ca-ends
     kind: Issuer
     group: cert-manager.io
 EndOfMessage
