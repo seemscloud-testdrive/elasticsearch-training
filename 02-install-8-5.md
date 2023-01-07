@@ -33,8 +33,8 @@ helm upgrade --install kibana elastic/kibana \
   --namespace logging-system \
   --set fullnameOverride=kibana \
   --set elasticsearchHosts="https://elasticsearch-aio:9200" \
-  --set elasticsearchCertificateSecret=elasticsearch-ca-ends-tls \
-  --set elasticsearchCredentialSecret=elasticsearch-aio-credentials \
   --set replicas=1 \
-  --set service.type=LoadBalancer
+  --set service.type=LoadBalancer \
+  --set elasticsearchCertificateSecret=elasticsearch-ca-ends-tls \
+  --set elasticsearchCredentialSecret=elasticsearch-aio-credentials
 ```

@@ -28,3 +28,37 @@ kubectl  exec -it elasticsearch-aio-0 -n logging-system -- ./bin/elasticsearch-s
 kubectl  exec -it elasticsearch-aio-0 -n logging-system -- curl https://0:9200/_cat/health -u -k -vvv elastic:XXXXXXXXXXXXXXXXXXXX
 kubectl  exec -it elasticsearch-aio-0 -n logging-system -- curl https://0:9200/_cat/nodes -u -k -vvv elastic:XXXXXXXXXXXXXXXXXXXX
 ```
+
+```basgh
+cat > values.yaml << "EndOfMessage"
+kibanaConfig:
+  kibana.yml: |
+    server.host: "0.0.0.0"
+    server.shutdownTimeout: "5s"
+    elasticsearch.ssl.verificationMode: "certificate"
+    elasticsearch.ssl.certificateAuthorities: "/usr/share/kibana/config/certs/ca.crt"
+EndOfMessage
+```
+
+```bash
+helm upgrade --install kibana elastic/kibana \
+  --version 7.17.3 \
+  --namespace logging-system \
+  --set fullnameOverride=kibana \
+  --set elasticsearchHosts="https://elasticsearch-aio:9200" \
+  --set replicas=1 \
+  --set service.type=LoadBalancer \
+  -f values.yaml \
+  --set extraEnvs[0].name=ELASTICSEARCH_USERNAME \
+  --set extraEnvs[0].value=elastic \
+  --set extraEnvs[0].name=ELASTICSEARCH_PASSWORD \
+  --set extraEnvs[0].value=nmHC8eIAZSoS2vn1UxV3 \
+  --set extraVolumes[0].name=tls \
+  --set extraVolumes[0].secret.secretName=elasticsearch-ca-ends-tls \
+  --set extraVolumeMounts[0].name=tls \
+  --set extraVolumeMounts[0].mountPath=/usr/share/kibana/config/certs/ca.crt \
+  --set extraVolumeMounts[0].subPath=ca.crt \
+  --set extraVolumeMounts[0].readOnly=true
+```
+
+
