@@ -3,6 +3,7 @@
 ### Cleanup 
 
 ```bash
+helm uninstall -n logging-system kibana
 helm uninstall -n logging-system elasticsearch
 ```
 
