@@ -3,13 +3,14 @@
 ### Cleanup
 
 ```bash
-kubectl delete -n logging-system certificates elasticsearch-ca elasticsearch-ca-ends
-kubectl delete -n logging-system issuers elasticsearch-ca elasticsearch-ca-ends
-kubectl delete -n logging-system secrets elasticsearch-ca-tls elasticsearch-ca-ends-tls
+helm uninstall -n logging-system kibana
+helm uninstall -n logging-system elasticsearch
 ```
 
 ```bash
-helm uninstall -n logging-system elasticsearch
+kubectl delete -n logging-system certificates elasticsearch-ca elasticsearch-ca-ends
+kubectl delete -n logging-system issuers elasticsearch-ca elasticsearch-ca-ends
+kubectl delete -n logging-system secrets elasticsearch-ca-tls elasticsearch-ca-ends-tls
 ```
 
 ### Verification
