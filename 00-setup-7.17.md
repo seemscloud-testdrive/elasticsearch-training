@@ -1,4 +1,7 @@
+## Cleanup / Verification
+
 ### Cleanup
+
 ```bash
 kubectl delete -n logging-system certificates elasticsearch-ca elasticsearch-ca-ends
 kubectl delete -n logging-system issuers elasticsearch-ca elasticsearch-ca-ends
@@ -9,6 +12,13 @@ kubectl delete -n logging-system secrets elasticsearch-ca-tls elasticsearch-ca-e
 helm uninstall -n logging-system elasticsearch
 ```
 
+### Verify
+
+```bash
+kubectl get -n logging-system certificates
+kubectl get -n logging-system secrets
+kubectl get -n logging-system issuers
+```
 
 ## Setup Certificates
 
@@ -73,12 +83,6 @@ spec:
     kind: Issuer
     group: cert-manager.io
 EndOfMessage
-```
-
-```bash
-kubectl get -n logging-system certificates
-kubectl get -n logging-system secrets
-kubectl get -n logging-system issuers
 ```
 
 ## Setup Elasticsearch
