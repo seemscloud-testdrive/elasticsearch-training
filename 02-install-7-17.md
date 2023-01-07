@@ -24,9 +24,6 @@ helm upgrade --install elasticsearch elastic/elasticsearch \
 
 ```bash
 kubectl  exec -it elasticsearch-aio-0 -n logging-system -- ./bin/elasticsearch-setup-passwords auto
-
-kubectl  exec -it elasticsearch-aio-0 -n logging-system -- curl https://0:9200/_cat/health -u -k -vvv elastic:XXXXXXXXXXXXXXXXXXXX
-kubectl  exec -it elasticsearch-aio-0 -n logging-system -- curl https://0:9200/_cat/nodes -u -k -vvv elastic:XXXXXXXXXXXXXXXXXXXX
 ```
 
 ```bash
