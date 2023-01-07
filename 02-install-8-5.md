@@ -17,9 +17,14 @@ helm upgrade --install elasticsearch elastic/elasticsearch \
   --set extraVolumeMounts[0].name=tls \
   --set extraVolumeMounts[0].mountPath=/usr/share/elasticsearch/config/certs \
   --set extraVolumeMounts[0].readOnly=true \
-  -f values.yaml \
+  -f elasticsearch.yaml \
   --set createCert=false \
   --set secret.password=elastic
+```
+
+```bash
+kubectl -n logging-system get secrets  elasticsearch-aio-credentials -o jsonpath="{.data.username}" | base64 -d ; echo
+kubectl -n logging-system get secrets  elasticsearch-aio-credentials -o jsonpath="{.data.passwords}" | base64 -d ; echo
 ```
 
 ```bash
@@ -30,6 +35,8 @@ helm upgrade --install kibana elastic/kibana \
   --set elasticsearchHosts="https://elasticsearch-aio:9200" \
   --set replicas=1 \
   --set service.type=LoadBalancer \
+  -f kibana.yaml \
   --set elasticsearchCertificateSecret=elasticsearch-ca-ends-tls \
   --set elasticsearchCredentialSecret=elasticsearch-aio-credentials
+
 ```

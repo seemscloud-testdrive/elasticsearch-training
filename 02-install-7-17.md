@@ -17,7 +17,7 @@ helm upgrade --install elasticsearch elastic/elasticsearch \
   --set extraVolumeMounts[0].name=tls \
   --set extraVolumeMounts[0].mountPath=/usr/share/elasticsearch/config/certs \
   --set extraVolumeMounts[0].readOnly=true \
-  -f values.yaml \
+  -f elasticsearch.yaml \
   --set extraEnvs[0].name=ELASTIC_PASSWORD \
   --set extraEnvs[0].value=XXXXXXXXXXXXXXXXXXXX
 ```
@@ -29,17 +29,6 @@ kubectl  exec -it elasticsearch-aio-0 -n logging-system -- curl https://0:9200/_
 kubectl  exec -it elasticsearch-aio-0 -n logging-system -- curl https://0:9200/_cat/nodes -u -k -vvv elastic:XXXXXXXXXXXXXXXXXXXX
 ```
 
-```basgh
-cat > values.yaml << "EndOfMessage"
-kibanaConfig:
-  kibana.yml: |
-    server.host: "0.0.0.0"
-    server.shutdownTimeout: "5s"
-    elasticsearch.ssl.verificationMode: "certificate"
-    elasticsearch.ssl.certificateAuthorities: "/usr/share/kibana/config/certs/ca.crt"
-EndOfMessage
-```
-
 ```bash
 helm upgrade --install kibana elastic/kibana \
   --version 7.17.3 \
@@ -48,17 +37,17 @@ helm upgrade --install kibana elastic/kibana \
   --set elasticsearchHosts="https://elasticsearch-aio:9200" \
   --set replicas=1 \
   --set service.type=LoadBalancer \
-  -f values.yaml \
-  --set extraEnvs[0].name=ELASTICSEARCH_USERNAME \
-  --set extraEnvs[0].value=elastic \
-  --set extraEnvs[1].name=ELASTICSEARCH_PASSWORD \
-  --set extraEnvs[1].value=nmHC8eIAZSoS2vn1UxV3 \
+  -f kibana.yaml \
   --set extraVolumes[0].name=tls \
   --set extraVolumes[0].secret.secretName=elasticsearch-ca-ends-tls \
   --set extraVolumeMounts[0].name=tls \
   --set extraVolumeMounts[0].mountPath=/usr/share/kibana/config/certs/ca.crt \
   --set extraVolumeMounts[0].subPath=ca.crt \
-  --set extraVolumeMounts[0].readOnly=true
+  --set extraVolumeMounts[0].readOnly=true \
+  --set extraEnvs[0].name=ELASTICSEARCH_SSL_CERTIFICATEAUTHORITIES \
+  --set extraEnvs[0].name=ELASTICSEARCH_USERNAME \
+  --set extraEnvs[0].value=elastic \
+  --set extraEnvs[1].name=ELASTICSEARCH_PASSWORD \
+  --set extraEnvs[1].value=nmHC8eIAZSoS2vn1UxV3
+
 ```
-
-

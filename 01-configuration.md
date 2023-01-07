@@ -1,5 +1,5 @@
 ```bash
-cat > values.yaml << "EndOfMessage"
+cat > elasticsearch.yaml << "EndOfMessage"
 esConfig:
   elasticsearch.yml: |
     cluster.name: "elastic"
@@ -18,5 +18,15 @@ esConfig:
     xpack.security.transport.ssl.certificate: certs/tls.crt
     xpack.security.transport.ssl.certificate_authorities: certs/ca.crt
     xpack.security.transport.ssl.verification_mode: certificate
+EndOfMessage
+```
+
+```bash
+cat > kibana.yaml << "EndOfMessage"
+kibanaConfig:
+  kibana.yml: |
+    server.host: "0.0.0.0"
+    server.shutdownTimeout: "5s"
+    elasticsearch.ssl.verificationMode: "certificate"
 EndOfMessage
 ```
