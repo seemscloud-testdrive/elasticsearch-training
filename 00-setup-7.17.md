@@ -1,10 +1,16 @@
-## Setup Certificates
-
+### Cleanup
 ```bash
 kubectl delete -n logging-system certificates elasticsearch-ca elasticsearch-ca-ends
 kubectl delete -n logging-system issuers elasticsearch-ca elasticsearch-ca-ends
 kubectl delete -n logging-system secrets elasticsearch-ca-tls elasticsearch-ca-ends-tls
 ```
+
+```bash
+helm uninstall -n logging-system elasticsearch
+```
+
+
+## Setup Certificates
 
 ```bash
 kubectl apply -f - << "EndOfMessage"
@@ -78,8 +84,6 @@ kubectl get -n logging-system issuers
 ## Setup Elasticsearch
 
 ```bash
-helm uninstall -n logging-system elasticsearch
-
 cat > values.yaml << "EndOfMessage"
 esConfig:
   elasticsearch.yml: |
