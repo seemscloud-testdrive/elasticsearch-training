@@ -1,3 +1,5 @@
+## Setup Certificates
+
 ```bash
 kubectl delete -n logging-system certificates elasticsearch-ca elasticsearch-ca-ends
 kubectl delete -n logging-system issuers elasticsearch-ca elasticsearch-ca-ends
@@ -72,6 +74,8 @@ kubectl get -n logging-system certificates
 kubectl get -n logging-system secrets
 kubectl get -n logging-system issuers
 ```
+
+## Setup Elasticsearch
 
 ```bash
 helm uninstall -n logging-system elasticsearch
