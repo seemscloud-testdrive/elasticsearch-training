@@ -1,8 +1,8 @@
 ```
 POST /twitter-000001/_analyze
 {
-  "analyzer": "my_analyzer",
-  "text": "Hello World!@#$%^&*() _+-= <>?,./ {}[] :\"| ;'\\!"
+  "analyzer": "default",
+  "text": "The Hello World 222 kuberentes.namespace_name ! :)"
 }
 
 PUT /twitter-000001
@@ -18,11 +18,31 @@ PUT /twitter-000001
   "settings": {
     "analysis": {
       "analyzer": {
-        "my_analyzer": {
+        "default": {
           "type": "custom",
+          "char_filter": [
+            "emoticons",
+            "replace_dots"
+          ],
           "tokenizer": "my_tokenizer",
           "filter": [
-            "lowercase"
+            "uppercase",
+            "stopwords"
+          ]
+        }
+      },
+      "char_filter": {
+        "emoticons": {
+          "type": "mapping",
+          "mappings": [
+            ":) => _happy_",
+            ":( => _sad_"
+          ]
+        },
+        "replace_dots": {
+          "type": "mapping",
+          "mappings": [
+            ". => _"
           ]
         }
       },
@@ -33,7 +53,6 @@ PUT /twitter-000001
             "whitespace",
             "~",
             "`",
-            "!",
             "@",
             "#",
             "$",
@@ -54,14 +73,25 @@ PUT /twitter-000001
             "/",
             ":",
             ";",
-            """\""",
             "'",
             "<",
             ">",
             ",",
             "?",
+            "!",
             "-",
             "."
+          ]
+        }
+      },
+      "filter": {
+        "stopwords": {
+          "type": "stop",
+          "ignore_case": true,
+          "stopwords": [
+            "and",
+            "is",
+            "the"
           ]
         }
       }
