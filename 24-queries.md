@@ -19,7 +19,7 @@ GET /twitter-000002/_search
 
 #### Query String
 
-```bash
+```
 GET /twitter-000001/_search
 {
   "query": {
