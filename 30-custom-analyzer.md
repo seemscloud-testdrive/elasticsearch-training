@@ -1,4 +1,4 @@
-```bash
+```
 POST /twitter-000001/_analyze
 {
   "analyzer": "my_analyzer",
@@ -7,6 +7,14 @@ POST /twitter-000001/_analyze
 
 PUT /twitter-000001
 {
+  "mappings": {
+    "dynamic": false,
+    "properties": {
+      "message": {
+        "type": "text"
+      }
+    }
+  },
   "settings": {
     "analysis": {
       "analyzer": {
@@ -46,7 +54,7 @@ PUT /twitter-000001
             "/",
             ":",
             ";",
-            "\\",
+            """\""",
             "'",
             "<",
             ">",
