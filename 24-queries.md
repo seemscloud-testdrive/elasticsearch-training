@@ -1,14 +1,5 @@
 #### Match All
-```
-GET /twitter-000001/_search
-{
-  "size": 100,
-  "query": {
-    "match_all": {}
-  }
-}
-
-GET /twitter-000002/_search
+```json
 {
   "size": 100,
   "query": {
@@ -19,8 +10,7 @@ GET /twitter-000002/_search
 
 #### Query String
 
-```
-GET /twitter-000001/_search
+```json
 {
   "query": {
     "query_string": {
@@ -33,7 +23,6 @@ GET /twitter-000001/_search
 #### Match At Least Of
 
 ```
-GET /twitter-000001/_search
 {
   "sort": [
     {
@@ -81,8 +70,7 @@ GET /twitter-000001/_search
 
 #### Match Sentence
 
-```
-GET /twitter-000001/_search
+```json
 {
   "sort": [
     {
@@ -120,8 +108,7 @@ GET /twitter-000001/_search
 
 #### Match Existing Field
 
-```
-GET /twitter-000001/_search
+```json
 {
   "sort": [
     {
