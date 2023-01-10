@@ -22,7 +22,7 @@
 
 #### Match At Least Of
 
-```
+```json
 {
   "sort": [
     {
