@@ -1,25 +1,4 @@
 ```bash
-cat > elasticsearch.yaml << "EndOfMessage"
-esConfig:
-  elasticsearch.yml: |
-    cluster.name: "elastic"
-    network.host: 0.0.0.0
-    
-    xpack.security.enabled: true
-    
-    xpack.security.http.ssl.enabled: true
-    xpack.security.http.ssl.key: certs/tls.key
-    xpack.security.http.ssl.certificate: certs/tls.crt
-    xpack.security.http.ssl.certificate_authorities: certs/ca.crt
-    xpack.security.http.ssl.verification_mode: certificate
-    
-    xpack.security.transport.ssl.enabled: true
-    xpack.security.transport.ssl.key: certs/tls.key
-    xpack.security.transport.ssl.certificate: certs/tls.crt
-    xpack.security.transport.ssl.certificate_authorities: certs/ca.crt
-    xpack.security.transport.ssl.verification_mode: certificate
-EndOfMessage
-
 helm upgrade --install elasticsearch elastic/elasticsearch \
   --version 7.17.3 \
   --namespace logging-system \
@@ -48,14 +27,6 @@ kubectl  exec -it elasticsearch-aio-0 -n logging-system -- ./bin/elasticsearch-s
 ```
 
 ```bash
-cat > kibana.yaml << "EndOfMessage"
-kibanaConfig:
-  kibana.yml: |
-    server.host: "0.0.0.0"
-    server.shutdownTimeout: "5s"
-    elasticsearch.ssl.verificationMode: "certificate"
-EndOfMessage
-
 helm upgrade --install kibana elastic/kibana \
   --version 7.17.3 \
   --namespace logging-system \
@@ -76,5 +47,4 @@ helm upgrade --install kibana elastic/kibana \
   --set extraEnvs[1].value=elastic \
   --set extraEnvs[2].name=ELASTICSEARCH_PASSWORD \
   --set extraEnvs[2].value=nmHC8eIAZSoS2vn1UxV3
-
 ```
