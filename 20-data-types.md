@@ -1,5 +1,4 @@
-```
-POST /twitter-000001/_create/1
+```json
 {
   "date": {
     "a": "2022/01/01",
