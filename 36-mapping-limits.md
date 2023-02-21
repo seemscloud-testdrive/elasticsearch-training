@@ -1,4 +1,4 @@
-### Setup
+## Setup
 
 ```
 DELETE _component_template/component
@@ -33,7 +33,7 @@ PUT _index_template/template
 }
 ```
 
-### Test
+## Test
 
 ```
 DELETE /index
@@ -45,7 +45,7 @@ POST /index/_doc
 }
 ```
 
-### Cleanup
+## Cleanup
 
 ```
 DELETE index
