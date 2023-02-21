@@ -1,41 +1,22 @@
 ```
-GET _scripts/truncate_field-lorem-to_128
-POST _scripts/truncate_field-lorem-to_128
+GET _scripts/script
+POST _scripts/script
 {
   "script": {
     "lang": "painless",
-    "source": "ctx.lorem = ctx.lorem.substring(0, (int) Math.min(params['max_length'], ctx.lorem.length()));"
+    "source": "ctx.message = ctx.message.substring(0, (int) Math.min(params['max_length'], ctx.message.length()));"
   }
 }
 ```
 
 ```
-GET _scripts/truncate_field-ipsum-to_128
-POST _scripts/truncate_field-ipsum-to_128
-{
-  "script": {
-    "lang": "painless",
-    "source": "ctx.ipsum = ctx.ipsum.substring(0, (int) Math.min(params['max_length'], ctx.ipsum.length()));"
-  }
-}
-```
-
-```
-GET _ingest/pipeline/loremipsum
-PUT _ingest/pipeline/loremipsum
+GET _ingest/pipeline/pipeline
+PUT _ingest/pipeline/pipeline
 {
   "processors": [
     {
       "script": {
-        "id": "truncate_field-lorem-to_128",
-        "params": {
-          "max_length": 3
-        }
-      }
-    },
-    {
-      "script": {
-        "id": "truncate_field-ipsum-to_128",
+        "id": "script",
         "params": {
           "max_length": 3
         }
@@ -46,13 +27,13 @@ PUT _ingest/pipeline/loremipsum
 ```
 
 ```
-GET _component_template/component-loremipsum
-PUT _component_template/component-loremipsum
+GET _component_template/component
+PUT _component_template/component
 {
   "template": {
     "settings": {
       "index": {
-        "default_pipeline": "loremipsum"
+        "default_pipeline": "pipeline"
       }
     }
   }
@@ -60,29 +41,27 @@ PUT _component_template/component-loremipsum
 ```
 
 ```
-GET _index_template/loremipsum
-PUT _index_template/loremipsum
+GET _index_template/template
+PUT _index_template/template
 {
-  "index_patterns": [ "loremipsum-*" ],
-  "composed_of": [ "component-loremipsum" ]
+  "index_patterns": [ "index" ],
+  "composed_of": [ "component" ]
 }
 ```
 
 ```
-GET loremipsum-000001
-POST /loremipsum-000001/_doc
+DELETE index
+GET index
+GET /index/_search
+POST /index/_doc
 {
-  "lorem": "lorem",
-  "ipsum": "ipsum"
+  "message": "lorem"
 }
-GET /loremipsum-000001/_search
 ```
 
 ```
-DELETE loremipsum-000001
-DELETE _index_template/loremipsum
-DELETE _component_template/component-loremipsum
-DELETE _ingest/pipeline/loremipsum
-DELETE _scripts/truncate_field-ipsum-to_128
-DELETE _scripts/truncate_field-lorem-to_128
+DELETE _index_template/template
+DELETE _component_template/component
+DELETE _ingest/pipeline/pipeline
+DELETE _scripts/script
 ```
