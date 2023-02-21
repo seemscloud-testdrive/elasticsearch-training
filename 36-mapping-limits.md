@@ -1,9 +1,9 @@
 ## Setup
 
 ```
-DELETE _component_template/component
-GET _component_template/component
-PUT _component_template/component
+DELETE _component_template/twitter
+GET _component_template/twitter
+PUT _component_template/twitter
 {
   "template": {
     "mappings": {
@@ -24,22 +24,22 @@ PUT _component_template/component
 ```
 
 ```
-DELETE _index_template/template
-GET _index_template/template
+DELETE _index_template/twitter
+GET _index_template/twitter
 PUT _index_template/template
 {
-  "index_patterns": [ "index" ],
-  "composed_of": [ "component" ]
+  "index_patterns": [ "twitter" ],
+  "composed_of": [ "twitter" ]
 }
 ```
 
 ## Test
 
 ```
-DELETE /index
-GET /index/_mapping
-GET /index/_search
-POST /index/_doc
+DELETE /twitter
+GET /twitter/_mapping
+GET /twitter/_search
+POST /twitter/_doc
 {
   "message": "sad"
 }
@@ -48,7 +48,7 @@ POST /index/_doc
 ## Cleanup
 
 ```
-DELETE index
-DELETE _index_template/template
-DELETE _component_template/component
+DELETE twitter
+DELETE _index_template/twitter
+DELETE _component_template/twitter
 ```
