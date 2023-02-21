@@ -60,6 +60,7 @@ POST /index/_doc
 ```
 
 ```
+DELETE index
 DELETE _index_template/template
 DELETE _component_template/component
 DELETE _ingest/pipeline/pipeline
