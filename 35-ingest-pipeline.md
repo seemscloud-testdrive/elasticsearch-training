@@ -1,4 +1,5 @@
 ```
+DELETE _scripts/script
 GET _scripts/script
 POST _scripts/script
 {
@@ -10,6 +11,7 @@ POST _scripts/script
 ```
 
 ```
+DELETE _ingest/pipeline/pipeline
 GET _ingest/pipeline/pipeline
 PUT _ingest/pipeline/pipeline
 {
@@ -27,6 +29,7 @@ PUT _ingest/pipeline/pipeline
 ```
 
 ```
+DELETE _component_template/component
 GET _component_template/component
 PUT _component_template/component
 {
@@ -41,6 +44,7 @@ PUT _component_template/component
 ```
 
 ```
+DELETE _index_template/template
 GET _index_template/template
 PUT _index_template/template
 {
@@ -52,11 +56,11 @@ PUT _index_template/template
 ```
 DELETE index
 GET index
-GET /index/_search
 POST /index/_doc
 {
   "message": "lorem"
 }
+GET /index/_search
 ```
 
 ```
