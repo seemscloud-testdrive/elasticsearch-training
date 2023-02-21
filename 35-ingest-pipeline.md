@@ -63,6 +63,8 @@ POST /index/_doc
 GET /index/_search
 ```
 
+## Cleanup
+
 ```
 DELETE index
 DELETE _index_template/template
