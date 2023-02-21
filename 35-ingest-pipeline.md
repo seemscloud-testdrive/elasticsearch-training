@@ -1,9 +1,9 @@
 ## Setup
 
 ```
-DELETE _scripts/script
-GET _scripts/script
-POST _scripts/script
+DELETE _scripts/twitter
+GET _scripts/twitter
+POST _scripts/twitter
 {
   "script": {
     "lang": "painless",
@@ -13,9 +13,9 @@ POST _scripts/script
 ```
 
 ```
-DELETE _ingest/pipeline/pipeline
-GET _ingest/pipeline/pipeline
-PUT _ingest/pipeline/pipeline
+DELETE _ingest/pipeline/twitter
+GET _ingest/pipeline/twitter
+PUT _ingest/pipeline/twitter
 {
   "processors": [
     {
@@ -31,14 +31,14 @@ PUT _ingest/pipeline/pipeline
 ```
 
 ```
-DELETE _component_template/component
-GET _component_template/component
-PUT _component_template/component
+DELETE _component_template/twitter
+GET _component_template/twitter
+PUT _component_template/twitter
 {
   "template": {
     "settings": {
       "index": {
-        "default_pipeline": "pipeline"
+        "default_pipeline": "twitter"
       }
     }
   }
@@ -46,33 +46,33 @@ PUT _component_template/component
 ```
 
 ```
-DELETE _index_template/template
-GET _index_template/template
-PUT _index_template/template
+DELETE _index_template/twitter
+GET _index_template/twitter
+PUT _index_template/twitter
 {
-  "index_patterns": [ "index" ],
-  "composed_of": [ "component" ]
+  "index_patterns": [ "twitter" ],
+  "composed_of": [ "twitter" ]
 }
 ```
 
-# Test
+## Test
 
 ```
-DELETE index
-GET index
-POST /index/_doc
+DELETE twitter
+GET twitter
+POST /twitter/_doc
 {
   "message": "lorem"
 }
-GET /index/_search
+GET /twitter/_search
 ```
 
 ## Cleanup
 
 ```
-DELETE index
-DELETE _index_template/template
-DELETE _component_template/component
-DELETE _ingest/pipeline/pipeline
-DELETE _scripts/script
+DELETE twitter
+DELETE _index_template/twitter
+DELETE _component_template/twitter
+DELETE _ingest/pipeline/twitter
+DELETE _scripts/twitter
 ```
