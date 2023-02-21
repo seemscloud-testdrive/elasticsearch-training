@@ -1,4 +1,7 @@
+### Setup
+
 ```
+DELETE _component_template/component
 GET _component_template/component
 PUT _component_template/component
 {
@@ -21,6 +24,7 @@ PUT _component_template/component
 ```
 
 ```
+DELETE _index_template/template
 GET _index_template/template
 PUT _index_template/template
 {
@@ -28,6 +32,8 @@ PUT _index_template/template
   "composed_of": [ "component" ]
 }
 ```
+
+### Test
 
 ```
 DELETE /index
@@ -39,7 +45,10 @@ POST /index/_doc
 }
 ```
 
+### Cleanup
+
 ```
-DELETE _component_template/component
+DELETE index
 DELETE _index_template/template
+DELETE _component_template/component
 ```
