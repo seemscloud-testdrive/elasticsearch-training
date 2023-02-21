@@ -1,4 +1,4 @@
-```
+```json
 DELETE _scripts/truncate_field-lorem-to_128
 GET _scripts/truncate_field-lorem-to_128
 POST _scripts/truncate_field-lorem-to_128
@@ -10,7 +10,7 @@ POST _scripts/truncate_field-lorem-to_128
 }
 ```
 
-```
+```json
 DELETE _scripts/truncate_field-ipsum-to_128
 GET _scripts/truncate_field-ipsum-to_128
 POST _scripts/truncate_field-ipsum-to_128
@@ -22,7 +22,7 @@ POST _scripts/truncate_field-ipsum-to_128
 }
 ```
 
-```
+```json
 DELETE _ingest/pipeline/loremipsum
 GET _ingest/pipeline/loremipsum
 PUT _ingest/pipeline/loremipsum
@@ -48,7 +48,7 @@ PUT _ingest/pipeline/loremipsum
 }
 ```
 
-```
+```json
 DELETE _component_template/component-loremipsum
 GET _component_template/component-loremipsum
 PUT _component_template/component-loremipsum
@@ -63,7 +63,7 @@ PUT _component_template/component-loremipsum
 }
 ```
 
-```
+```json
 DELETE _index_template/loremipsum
 GET _index_template/loremipsum
 PUT _index_template/loremipsum
@@ -73,7 +73,7 @@ PUT _index_template/loremipsum
 }
 ```
 
-```
+```json
 DELETE loremipsum-000001
 GET loremipsum-000001
 GET /loremipsum-000001/_search
