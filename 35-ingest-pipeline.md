@@ -1,3 +1,5 @@
+## Setup
+
 ```
 DELETE _scripts/script
 GET _scripts/script
@@ -52,6 +54,8 @@ PUT _index_template/template
   "composed_of": [ "component" ]
 }
 ```
+
+# Test
 
 ```
 DELETE index
